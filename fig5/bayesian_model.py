@@ -42,7 +42,6 @@ goal_window_cm = 20
 conddf=pd.read_csv(r'Z:\condition_df\conddf_performance_chrimson.csv')
 savedst = r"C:\Users\Han\Desktop\goal_decoding"
 
-# conddf = conddf[(conddf.optoep>1)]
 iis = np.arange(len(conddf))  # Animal indices
 iis = [ii for ii in iis if ii!=202 and ii!=40 and ii!=129 and ii!=164 and ii!=199]
 dct = {}
@@ -667,7 +666,6 @@ df['days'] = [int(k.split('_')[1]) for k, v in dct.items()]
 df['opto_s_rate'] = df[['opto_s_rate', 'opto_f_rate']].mean(axis=1)
 df['opto_s_rate']=df['opto_s_rate']*100
 
-# df['opto_time_before_predict_s'] = df[['opto_time_before_predict_s', 'opto_time_before_predict_f']].mean(axis=1)
 df['opto_time_before_predict_s']=df['opto_time_before_predict_s']*100
 df_shuffle = pd.read_csv(r'Z:\saved_datasets\decoding_shuffle_202509.csv')
 
@@ -677,13 +675,7 @@ df = pd.merge(df, cdf, on=['animals', 'days'], how='inner')
 
 df['type']=[xx if 'vip' in xx else 'ctrl' for xx in df.in_type]
 
-df=df[(df.animals!='e189')&(df.animals!='e190')]
-# remove outlier days
 
-df=df[~((df.animals=='e216')&(df.days.isin([55,57])))]
-df=df[~((df.animals=='e218')&(df.days.isin([55])))]
-
-# df.to_csv(r'Z:\saved_datasets\bayesian_goal_decoding_70_30_split.csv', index=None)
 pl=['slategray','red','darkgoldenrod']
 order = ['ctrl','vip','vip_ex']
 
@@ -745,7 +737,7 @@ for i,(a,b) in enumerate(pairs):
 ax.set_ylabel('Accuracy (%)')
 
 var='opto_time_before_predict_s'
-ax=axes[1]# df=df.groupby(['animals','days','type']).mean(numeric_only=True)
+ax=axes[1]
 sns.barplot(x='type',y=var,data=df,fill=False,ax=ax,palette=pl)
 sns.stripplot(x='type',y=var,data=df,ax=ax,alpha=0.3,hue='type',palette=pl)
 sns.stripplot(x='type',y=var,data=dfan,ax=ax,s=10,alpha=.7,hue='type',palette=pl)
@@ -785,9 +777,7 @@ for i,(a,b) in enumerate(pairs):
 sns.despine()
 fig.suptitle('Goal decoding performance (LED on)')
 plt.tight_layout()
-savedst = r'C:\Users\Han\Box\neuro_phd_stuff\han_2023-\pyramidal_cell_paper'
-# plt.savefig(os.path.join(savedst, 'goal_decoding_opto.svg'), bbox_inches='tight')
-#%
+
 # pos decoding
 # %%
  
@@ -843,7 +833,6 @@ for i,(a,b) in enumerate(pairs):
                p,t)
 ax.set_ylabel('Mean absolute error (cm)')
 sns.despine()
-# fig.suptitle('Position decoding performance (LED on)')
+fig.suptitle('Position decoding performance (LED on)')
 plt.tight_layout()
-# plt.savefig(os.path.join(savedst, 'pos_decoding_opto.svg'), bbox_inches='tight')
 
