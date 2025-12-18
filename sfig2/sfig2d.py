@@ -14,7 +14,6 @@ mpl.rcParams["xtick.major.size"] = 10
 mpl.rcParams["ytick.major.size"] = 10
 # plt.rc('font', size=20)          # controls default text sizes
 plt.rcParams["font.family"] = "Arial"
-#%%
 
 def wilcoxon_r(x, y):
     # x, y are paired arrays (same subjects)
@@ -34,7 +33,7 @@ def wilcoxon_r(x, y):
  
 # number of epochs vs. reward cell prop incl combinations    
 # combine the dataframes 
-df_new=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\exfig2d.csv')
+df_new=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\sfig2d.csv')
 df_new['prop_diff'] = df_new['goal_cell_prop'] - df_new['goal_cell_prop_shuffle']
 df_av = df_new.groupby(['animals', 'type']).median(numeric_only=True)
 df_av = df_av.reset_index()

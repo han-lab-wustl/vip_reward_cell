@@ -17,14 +17,13 @@ import scipy.stats as stats, itertools
 from statsmodels.stats.multitest import multipletests
 from statsmodels.stats.anova import anova_lm  # <-- Correct import
 
-df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig4i_exfig4.csv')
+df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig6i_sfig5.csv')
 # plot rates vip vs. ctl led off and on
 bigdf_plot = df.groupby(['animals', 'condition', 'opto']).mean(numeric_only=True).reset_index()
 # 
 # Pairwise Mann-Whitney U testsn (Wilcoxon rank-sum)
 conds = ['ctrl', 'vip', 'vip_ex']
 comparisons = list(itertools.combinations(conds, 2))[:-1]
-#%%
 plt.rc('font', size=18)
 # correct trials
 # Plot
@@ -361,8 +360,8 @@ for i, (c1, c2) in enumerate(comparisons):
 # ax.set_ylim([-35,10])
 plt.tight_layout()
 fig.suptitle('Pre-reward lick rate, last 8 trials')
-plt.savefig(os.path.join(savedst, 'lick_rate_opto_last8.svg'), bbox_inches='tight')
 #%% 
+
 # lick selectivity early
 fig, axes = plt.subplots(ncols = 2, figsize=(7.5,4.5),width_ratios=[1.8,1])
 # expand opto vs. prev
