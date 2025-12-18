@@ -3,7 +3,6 @@
 zahra
 get tuning curves with dark time
 get cells in 2, 3, or 4 epochs
-only use spatially tuned!!!
 july 2025
 """
 #%%
@@ -33,11 +32,9 @@ def wilcoxon_r(x, y):
     Z = np.sign(np.nanmean(diffs)) * abs(Z)
     r = Z / np.sqrt(n)
     return r, p
- 
 
-#%% 
 # for figure; place cells in any epoch
-df_permsav=pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig2c.csv")
+df_permsav=pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig3c.csv")
 
 fig,ax = plt.subplots(figsize=(3,4))
 sns.barplot(x='epoch_comparison', y='goal_cell_prop',
@@ -53,7 +50,6 @@ ax.set_xticklabels(ax.get_xticklabels(),rotation=20)
 eps = df_permsav.epoch_comparison.unique()
 pvalues=[]
 for ep in eps:
-        # rewprop = df_plt.loc[(df_plt.num_epochs==ep), 'goal_cell_prop']
         rewprop = df_permsav.loc[(df_permsav.epoch_comparison==ep), 
         'goal_cell_prop'].values
         shufprop = df_permsav.loc[(df_permsav.epoch_comparison==ep), 
@@ -155,10 +151,10 @@ if p_kw < 0.05:
                     ha='center', va='bottom', fontsize=fs)
             current_y += bar_height  # increment for next bar
 fig.suptitle('Reward cells between two epochs')
-#%%
+
 # compare to shuffle
 plt.rc('font', size=20)          # controls default text sizes
-df_plt2=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig2d.csv')
+df_plt2=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig3d.csv')
 # number of epochs vs. reward cell prop incl combinations    
 fig,axes = plt.subplots(figsize=(6.5,4),ncols=2,sharex=True)
 ax=axes[0]

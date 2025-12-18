@@ -24,7 +24,7 @@ conds = ['ctrl', 'vip', 'vip_ex']
 fig, ax = plt.subplots(figsize=(4.7,5.5 ))
 # expand opto vs. prev
 pl=['k','slategray']
-dfnew=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig5b.csv')
+dfnew=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig7b.csv')
 # ---- aggregate for other panel (as you had) ----
 dfagg = dfnew.groupby(['animals','condition','epoch']).mean(numeric_only=True).reset_index()
 dfagg['dff']=dfagg['dff']*100

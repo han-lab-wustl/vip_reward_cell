@@ -29,11 +29,11 @@ def wilcoxon_r(x, y):
     Z = np.sign(np.nanmean(diffs)) * abs(Z)
     r = Z / np.sqrt(n)
     return r, p
-#%%
+
 # lick rate correct vs. incorrect
 # per epoch
 plt.rc('font', size=20) 
-df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig1g.csv')
+df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig1g.csv')
 df_long = df.melt(
     id_vars=['animal', 'day'],
     value_vars=['lick_rate_corr', 'lick_rate_incorr_pre','lick_rate_incorr'],

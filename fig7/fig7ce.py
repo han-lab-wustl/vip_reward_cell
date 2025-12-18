@@ -18,7 +18,7 @@ mpl.rcParams["xtick.major.size"] = 10
 mpl.rcParams["ytick.major.size"] = 10
 plt.rcParams["font.family"] = "Arial"
 
-df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig5h.csv')
+df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig7h.csv')
 pl =['k','slategray']
 df_plt = df
 df_plt = df_plt.groupby(['animals','condition','opto']).mean(numeric_only=True).reset_index()
@@ -371,18 +371,18 @@ for i, (cond1, cond2) in enumerate(pairs):
 pl ={'ctrl': "slategray", 'vip': 'red', 'vip_ex': 'darkgoldenrod'}
 
 # correlate with rates diff
-beh = pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig5f.csv')
+beh = pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig7f.csv')
 beh=beh[(beh.animals.isin(df.animals.values))&(beh.days.isin(df.days.values))]
 beh = beh.groupby(['animals', 'opto']).mean(numeric_only=True).reset_index()
 beh=beh[beh.opto==True]
 # take all trial cells
 # y = np.nanmean([df_an.loc[(df_an.opto==True), 'place_cell_prop_early'].values,df_an.loc[(df_an.opto==True), 'place_cell_prop'].values],axis=0)
 # average sp and place
-df_an['sp_av_prop'] = df_an[['place_cell_prop','other_sp_prop']].mean(axis=1)
+df_an['sp_av_prop'] = df_an[['place_cell_prop','other_sp_prop']].max(axis=1)
 # Compute the difference: on - off
 # spatially tuned (not place)
 diff = (
-    df_an.pivot(index="animals", columns="opto", values="other_sp_prop")
+    df_an.pivot(index="animals", columns="opto", values="sp_av_prop")
     .assign(difference=lambda x: x[True] - x[False])
     .reset_index()[["animals", "difference"]]
 )
@@ -402,16 +402,3 @@ ax.set_ylabel("$\Delta$ Place cell % (LEDon)")
 ax.set_title(f"r={r_value:.3g}, p={p_value:.3g}",fontsize=16)
 ax.spines[['top', 'right']].set_visible(False)
 fig.suptitle('Place cell vs. task performance')
-
-#%%
-# Change y='place_cell_prop' -> y='other_sp_prop' throughout
-
-fig,ax=plt.subplots()
-sns.stripplot(x='opto', y='other_sp_prop',
-        hue='condition', data=df_plt,
-        palette=pl, dodge=True,
-        s=s, alpha=0.7)
-sns.barplot(x='opto', y='other_sp_prop', hue='condition',
-        data=df_plt,
-        palette=pl,
-        fill=False, ax=ax, color='k', errorbar='se', legend=False)

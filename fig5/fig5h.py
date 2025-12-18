@@ -21,11 +21,10 @@ mpl.rcParams["ytick.major.size"] = 10
 plt.rc('font', size=18)          # controls default text sizes
 plt.rcParams["font.family"] = "Arial"
 
-fl = r"C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\exfig3h.p"
-savedst = r'C:\Users\Han\Box\neuro_phd_stuff\han_2023-\pyramidal_cell_paper\panels_main_figures'
+fl = r"C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig5h.p"
 with open(fl, "rb") as fp: #unpickle
     dct = pickle.load(fp)
-#%%
+
 # The file contained a list of eight dictionaries, [PRV, APRV, POV, APOV, PRF, APRF, POF, APOF], (Pre validation error (prv) pred - truth, Absolute pre validation error (aprv), |pred - truth|, Post validation error (pov), Absolute post validation error (apov), Pre testing error (prf), Absolute pre testing error (aprf), Post testing error (pof),Absolute post testing error (apof)). V stands for validation, which are unseen successful trials, F stands for failure, which are unseen failed trials. 
 # Each dictionary's keys are mouse id, and values are lists fo decoding error of this mouse in different epochs. Therefore, the mean of the list represents the mean decoding error of this animal. A paired t-test between PRV and POV over animals will show the difference between the pre and post position decoding, which reflects the animal in the pre-reward area mostly encodes the future position, while encoding the previous position (or fluctuation around exact location).
 

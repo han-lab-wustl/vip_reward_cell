@@ -18,7 +18,7 @@ plt.rcParams["font.family"] = "Arial"
 
 s=12
 # save
-realdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\fig5d.csv')
+realdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig7d.csv')
 # compare between groups
 dfbig=realdf.groupby(['animal', 'epoch_dur','condition','opto']).mean(numeric_only=True).reset_index()
 dfbig['animals']=dfbig['animal']

@@ -17,10 +17,8 @@ mpl.rcParams["ytick.major.size"] = 8
 # plt.rc('font', size=16)          # controls default text sizes
 plt.rcParams["font.family"] = "Arial"
 
-df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig3k.csv')
-#%%
+df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig4k.csv')
 # histogram of latencies
-# fig 3
 plt.rc('font', size=20) 
 # Prepare data
 subset = df[df.behavior == 'Reward']

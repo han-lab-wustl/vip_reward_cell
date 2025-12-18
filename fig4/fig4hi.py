@@ -37,8 +37,7 @@ def wilcoxon_r(x, y):
     return r, p
  
 
-#%%
-pltdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig3h.csv')
+pltdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig4h.csv')
 # summary fig
 pl=['indigo','lightpink']
 fig,ax=plt.subplots(figsize=(4,3))
@@ -48,7 +47,6 @@ ax.set_ylabel(r'Opp. loc. mean % $\Delta F/F$')
 ax.set_xlabel(r'Trial #')
 fig.suptitle(r'Place (COM $<\pi/4$ and $>0$)')
 plt.tight_layout()
-#%%
 def add_pair_lines(ax, data, x='condition', y='', order=None, id_col='animal', color='gray', alpha=0.5):
    """Draw paired lines connecting conditions for each animal."""
    for a, sub in data.groupby(id_col):
@@ -69,7 +67,7 @@ def add_sig(ax, data, y, order, id_col='animal', ypos=None,h=.1):
    ax.text(0.5, ypos, f"cohen's r={stat:.3g}\np={p:.3g}", ha='center', va='bottom',fontsize=8)
    return stat, p
 
-bigdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig3i.csv')
+bigdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig4i.csv')
 
 plt.rc('font', size=14)  
 order=['nofarlick','farlick']

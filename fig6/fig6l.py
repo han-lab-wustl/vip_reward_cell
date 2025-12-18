@@ -16,8 +16,8 @@ mpl.rcParams["ytick.major.size"] = 8
 import matplotlib.pyplot as plt
 plt.rcParams["font.family"] = "Arial"
 
-df_trials=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig4l.csv')
-#%%
+df_trials=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig6l.csv')
+
 plt.rc('font', size=16)
 fig, axes = plt.subplots(ncols=3, figsize=(7,3.5), sharey=True)
 colors = {'ctrl':'slategray', 'vip':'red', 'vip_ex':'darkgoldenrod'}

@@ -14,8 +14,8 @@ mpl.rcParams["xtick.major.size"] = 8
 mpl.rcParams["ytick.major.size"] = 8
 # plt.rc('font', size=16)          # controls default text sizes
 plt.rcParams["font.family"] = "Arial"
-#%%
-with open(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig3l.p', "rb") as fp: #unpickle
+
+with open(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig4l.p', "rb") as fp: #unpickle
    dct = pickle.load(fp)
 nrewstops_wo_licks_trials_per_an=dct['nrewstops_wo_licks_trials_per_an']
 nrewstops_w_licks_trials_per_an=dct['nrewstops_w_licks_trials_per_an']
@@ -33,7 +33,6 @@ nrewstops_w_licks_trials_per_an_av = [[np.nanmean(np.hstack(yy)[int((range_val/b
 rewstops_trials_per_an_av = [[np.nanmean(np.hstack(yy)[int((range_val/binsize)+(mov_start/binsize)):int((range_val/binsize)+(secs_post_rew/binsize))],axis=(1,0))-np.nanmean(np.hstack(yy)[int((range_val/binsize)+(pre/binsize)):int((range_val/binsize))],axis=(1,0)) for yy in xx] for xx in rewstops_trials_per_an]
 
 
-#%%
 def wilcoxon_r(x, y):
     # x, y are paired arrays (same subjects)
     W, p = scipy.stats.wilcoxon(x, y, zero_method="wilcox")

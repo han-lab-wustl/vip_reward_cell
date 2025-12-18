@@ -15,7 +15,7 @@ mpl.rcParams["ytick.major.size"] = 10
 # plt.rc('font', size=16)          # controls default text sizes
 plt.rcParams["font.family"] = "Arial"
 
-df_plt = pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig1d.csv")
+df_plt = pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig1d.csv")
 # plot goal cells across epochs
 plt.rc('font', size=20)
 colors=['k','slategray','darkcyan','darkgoldenrod']

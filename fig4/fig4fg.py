@@ -36,21 +36,9 @@ def wilcoxon_r(x, y):
     r = Z / np.sqrt(n)
     return r, p
  
-#%%
-# summary fig
-pltdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig3f.csv')
-pl=['cornflowerblue','cadetblue']
-fig,ax=plt.subplots(figsize=(4,3))
-sns.lineplot(x='trial_num',y='mean_dff_far',hue='condition',data=pltdf,palette=pl)
-ax.spines[['top','right']].set_visible(False)
-ax.set_ylabel(r'Opp. loc. mean % $\Delta F/F$')
-ax.set_xlabel(r'Trial #')
-fig.suptitle('Reward')
-plt.tight_layout()
 # save raw data
-#%%
 # quant
-bigdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig3g.csv')
+bigdf=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig4g.csv')
 
          
 def add_pair_lines(ax, data, x='condition', y='', order=None, id_col='animal', color='gray', alpha=0.5):

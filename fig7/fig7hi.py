@@ -10,25 +10,14 @@ import ruptures as rpt
 from scipy.ndimage import gaussian_filter1d
 from scipy.stats import poisson
 from scipy.special import logsumexp
-from sklearn.neighbors import KernelDensity
-from sklearn.model_selection import train_test_split
-from sklearn.decomposition import PCA
-import torch
-from torch.utils.data import TensorDataset, DataLoader
 from joblib import Parallel, delayed
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-
 import numpy as np, sys
 import scipy.io, scipy.interpolate, scipy.stats
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from hmmlearn import hmm
 import random
-sys.path.append(r'C:\Users\Han\Documents\MATLAB\han-lab') ## custom to your clone
-from projects.opto.behavior.behavior import smooth_lick_rate
-from projects.pyr_reward.placecell import make_tuning_curves_by_trialtype_w_darktime, intersect_arrays,make_tuning_curves
-from projects.opto.behavior.behavior import smooth_lick_rate
 import matplotlib.backends.backend_pdf, matplotlib as mpl
 from sklearn.preprocessing import StandardScaler
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -38,8 +27,8 @@ mpl.rcParams["ytick.major.size"] = 10
 plt.rcParams["font.family"] = "Arial"
 
 
-df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\fig5_bayesian_goal_decoding_70_30_split.csv')
-df_shuffle = pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\fig5_decoding_shuffle.csv')
+df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig7_bayesian_goal_decoding_70_30_split.csv')
+df_shuffle = pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig7_decoding_shuffle.csv')
 
 pl=['slategray','red','darkgoldenrod']
 order = ['ctrl','vip','vip_ex']

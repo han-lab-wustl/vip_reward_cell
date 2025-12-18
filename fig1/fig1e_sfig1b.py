@@ -13,7 +13,7 @@ mpl.rcParams["ytick.major.size"] = 10
 import matplotlib.pyplot as plt
 plt.rcParams["font.family"] = "Arial"
 
-src = r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig1e.p'
+src = r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig1e.p'
 with open(src, "rb") as fp: #unpickle
    dct = pickle.load(fp)
 # plot
@@ -85,3 +85,4 @@ ax.set_ylabel('Lick selectivity')
 ax.set_xlabel('# correct trials across epoch')
 ax.legend(fontsize=10)
 plt.tight_layout()
+#%%

@@ -1,7 +1,6 @@
 """
-fig 2 panel
+fig 3 panel
 """
-#%%
 import os, pandas as pd, numpy as np, seaborn as sns, matplotlib.pyplot as plt,scipy
 import matplotlib.backends.backend_pdf, matplotlib as mpl, sys
 from itertools import combinations
@@ -13,8 +12,8 @@ plt.rcParams["font.family"] = "Arial"
 sys.path.append(r'C:\Users\Han\Documents\MATLAB\han-lab') ## custom to your clone
 from projects.pyr_reward.rewardcell import wilcoxon_r
 
-df_plt = pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig2fg.csv')
-#%% combine pre and post
+df_plt = pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig3fg.csv')
+# combine pre and post
 
 from statsmodels.stats.multitest import multipletests
 

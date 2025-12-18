@@ -17,7 +17,7 @@ mpl.rcParams["ytick.major.size"] = 10
 plt.rcParams["font.family"] = "Arial"
 
 # df=df[(df.animal!='e189')]
-df=pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig1g.csv")
+df=pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig2b.csv")
 colors = ['k', 'slategray', 'darkcyan', 'darkgoldenrod', 'orchid']
 s=10
 a=.7

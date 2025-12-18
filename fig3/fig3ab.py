@@ -32,11 +32,10 @@ def wilcoxon_r(x, y):
     Z = np.sign(np.nanmean(diffs)) * abs(Z)
     r = Z / np.sqrt(n)
     return r, p
- 
-#%% 
+
 # for figure; place cells in any epoch
 # consecutive epochs
-df_permsav=pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig2a.csv")
+df_permsav=pd.read_csv(r"C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig3a.csv")
 fig,ax = plt.subplots(figsize=(3,4))
 sns.barplot(x='epoch_comparison', y='place_cell_prop',
         data=df_permsav,

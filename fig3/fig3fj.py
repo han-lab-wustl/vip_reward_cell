@@ -28,7 +28,7 @@ def wilcoxon_r(x, y):
     r = Z / np.sqrt(n)
     return r, p
 
-df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig2j.csv')
+df=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig3j.csv')
 fig, ax = plt.subplots(figsize=(5,5))
 s = 10
 
@@ -77,8 +77,5 @@ for i, (trans, p_corr) in enumerate(zip(transitions, p_vals_corrected)):
     ax.text(i, y_max + y_max*0.05-5, f'({t_stats[i]:.3g},\n{p_corr:.3g})', ha='center', va='bottom', fontsize=8)
 
 ax.spines[['top','right']].set_visible(False)
-# ax.set_title('Real vs Shuffle Transitions')
 ax.legend()
 fig.tight_layout(rect=[0, 0, 0.85, 1])
-
-#%%

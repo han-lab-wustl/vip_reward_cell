@@ -41,7 +41,7 @@ def wilcoxon_r(x, y):
 order = ['Control','VIP Inhibition','VIP Excitation']
 pl = {'Control': "slategray", 'VIP Inhibition': "red", 'VIP Excitation': 'darkgoldenrod'}
 # first 8 
-df_plot=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig4m_first.csv')
+df_plot=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig6m_first.csv')
 # Get hue offsets (where seaborn puts the stripplot points)
 n_hue = df_plot["zone"].nunique()
 dodge_amount = 0.4  # adjust if needed
@@ -126,7 +126,7 @@ ax.legend(title="Condition")
 fig.suptitle('First 8 trials')
 
 # last 8
-df_plot=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell\raw_data\fig4m.csv')
+df_plot=pd.read_csv(r'C:\Users\Han\Documents\MATLAB\vip_reward_cell_copy_w_raw_data\raw_data\cell\fig6m.csv')
 # Get hue offsets (where seaborn puts the stripplot points)
 n_hue = df_plot["zone"].nunique()
 dodge_amount = 0.4  # adjust if needed
